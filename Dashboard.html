@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        height: 100vh;
+        background-color: #f8f8f8;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 280px;
+        background: linear-gradient(to bottom, #f7d891, #fff);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .profile {
+        text-align: center;
+      }
+
+      .profile img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #fff;
+        padding: 5px;
+      }
+
+      .menu {
+        list-style: none;
+        padding-top: 20px;
+      }
+
+      .menu li {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .menu li:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+
+      .menu li i {
+        margin-right: 10px;
+      }
+
+      .logout {
+        margin-top: auto;
+        padding: 10px;
+        cursor: pointer;
+        color: red;
+      }
+
+      /* Main content */
+      .main-content {
+        flex-grow: 1;
+        padding: 20px;
+      }
+
+      .header {
+        background-image: url("./Assets/blogbanner.avif");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        background-image: url("./Assets/blogbanner.avif");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: white;
+      }
+
+      .choose-program {
+        background-color: #ffc107;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+      }
+
+      /* Recommended programs */
+      .recommended {
+        margin-top: 20px;
+      }
+
+      .recommended h2 {
+        margin-bottom: 20px;
+      }
+
+      .programs {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+      }
+
+      .program-card {
+        background: linear-gradient(to top, #f7d891, #fff);
+        border-radius: 10px;
+        overflow: hidden;
+        width: 280px;
+        box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .program-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .program-details {
+        /* padding: 15px; */
+        margin-bottom: 5px;
+      }
+
+      .program-details h3 {
+
+        background: black;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .program-details p {
+        padding-left: 10px;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .apply-button {
+        display: block;
+        text-align: center;
+        background-color: rgb(255, 187, 0);
+        padding: 10px;
+        font-weight: bold;
+        border: 2px solid black;
+        cursor: pointer;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+
+      .apply-div{
+        background-color: #f8c838;
+        display: flex;
+        padding: 10px;
+      }
+
+      .apply-div h6{
+        font-size: 13px;
+        font-weight: 400;
+        padding-bottom: 10px;
+      }
+
+      .apply-div-date{
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+      }
+      .apply-div-date h4{
+        padding-left: 10px;
+      }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .pagination span {
+        width: 10px;
+        height: 10px;
+        background: gray;
+        margin: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .pagination span.active {
+        background: black;
+      }
+      body {
+        /* background: linear-gradient(to right, #f7d891, #fff); */
+        background: #f7d891;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="profile">
+        <img src="Assets/219988.png" alt="Profile" />
+        <p>Hey Mokshita!<br />Welcome</p>
+      </div>
+      <ul class="menu">
+        <li><i class="fa-solid fa-house"></i> Dashboard</li>
+        <li><i class="fa-solid fa-tv"></i> Programs</li>
+        <li><i class="fa-solid fa-user-group"></i> Mentors</li>
+        <li><i class="fa-solid fa-building"></i> Companies</li>
+        <li><i class="fa-solid fa-microphone-lines"></i> Webinars</li>
+        <li><i class="fa-solid fa-bell"></i> Notifications</li>
+        <li><i class="fa-solid fa-gears"></i> App Settings</li>
+        <li><i class="fa-solid fa-phone-volume"></i> Contact Support</li>
+        <li><i class="fa-solid fa-arrows-rotate"></i> Updates</li>
+      </ul>
+      <div class="logout">
+        <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="header">
+        <button class="choose-program">CHOOSE A PROGRAM</button>
+      </div>
+
+      <div class="recommended">
+        <h2>RECOMMENDED PROGRAMS</h2>
+        <div class="programs">
+          <div class="program-card">
+            <img src="/Assets/dashboard1.png" alt="Development" />
+            <div class="program-details">
+              <h3>DEVELOPMENT</h3>
+              <p><i class="fa-regular fa-clock"></i> 4 months Course</p>
+              <p><i class="fa-solid fa-money-bills"></i> Get placed with Rs 3-10 LPA Salary</p>
+              <p><i class="fa-solid fa-globe"></i> 1.08 Lac+ opportunities</p>
+              <div class="apply-div">
+                <div class="apply-div-date">
+                  <h6><i class="fa-solid fa-calendar-days"></i> Application closes on</h6>
+                  <h4>23 Feb 2026</h4>
+                </div>
+                <button class="apply-button">APPLY NOW</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="program-card">
+            <img src="/Assets/dashboard2.png" alt="Analyst" />
+            <div class="program-details">
+              <h3>ANALYST</h3>
+              <p><i class="fa-regular fa-clock"></i> 4 months Course</p>
+              <p><i class="fa-solid fa-money-bills"></i> Get placed with Rs 3-10 LPA Salary</p>
+              <p><i class="fa-solid fa-globe"></i> 1.08 Lac+ opportunities</p>
+              <div class="apply-div">
+                <div class="apply-div-date">
+                  <h6><i class="fa-solid fa-calendar-days"></i> Application closes on</h6>
+                  <h4>23 Feb 2026</h4>
+                </div>
+                <button class="apply-button">APPLY NOW</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="program-card">
+            <img src="/Assets/dashboard3.png" alt="Testing" />
+            <div class="program-details">
+              <h3>TESTING</h3>
+              <p><i class="fa-regular fa-clock"></i></i> 4 months Course</p>
+              <p><i class="fa-solid fa-money-bills"></i> Get placed with Rs 3-10 LPA Salary</p>
+              <p><i class="fa-solid fa-globe"></i> 1.08 Lac+ opportunities</p>
+              <div class="apply-div">
+                <div class="apply-div-date">
+                  <h6><i class="fa-solid fa-calendar-days"></i> Application closes on</h6>
+                  <h4>23 Feb 2026</h4>
+                </div>
+                <button class="apply-button">APPLY NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="pagination">
+          <span class="active"></span>
+          <span></span>
+          <span></span>
+        </div> -->
+      </div>
+    </div>
+    
+  </body>
+</html>
